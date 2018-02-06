@@ -4,7 +4,7 @@ import {Form, Button, Message} from 'semantic-ui-react';
 import Validator from "validator";
 import InlineError from "../messages/InlineError"
 
-class SignInForm extends React.Component {
+class SignUpForm extends React.Component {
 
 	state={
 		data:{
@@ -44,45 +44,40 @@ class SignInForm extends React.Component {
 			
 			<Form onSubmit={this.onSubmit}> 
 				{errors.global && (
-					<Message negative>
-						<Message.Header> Something went wrong </Message.Header>
-						<p> {errors.global} </p>
-					</Message>
+					<div className="alert alert-danger">
+					  <strong>Something went wrong </strong> <p> {errors.global} </p>
+					</div>
 				)}
 
+			  <div className="form-group">
+			    <input 
+			    	type="email" 
+			    	className="form-control" 
+			    	value={data.email}
+			    	onChange={this.onChange}
+			    	name="email"
+			    	placeholder="Email"
+			    />
+			  </div>
 
-				<Form.Field error={!!errors.email}>
-					<label htmlFor="email"> Email </label>
-					<input 
-						type= "email" 
-						id= "email" 
-						name="email" 
-						placeholder="example@example.com"
-						value={data.email}
-						onChange= {this.onChange}
-					/>
-				</Form.Field>
-				{errors.email && <InlineError text={errors.email}/>}
+			  <div className="form-group">
+			    <input 
+			    	type="password" 
+			    	className="form-control" 
+			    	value={this.state.password}
+			    	onChange={this.onChange}
+			    	name="password"
+			    	placeholder="Password"
+			    />
+			  </div>
+			  <button type="submit" className="btn btn-primary">Login</button>
 
-				<Form.Field error={!!errors.Password}>
-					<label htmlFor="password"> Password </label>
-					<input 
-						type= "password" 
-						id= "password" 
-						name="password" 
-						placeholder="make it secure"
-						value={data.password}
-						onChange= {this.onChange}
-					/>
-					{errors.password && <InlineError text={errors.password}/>}
-				</Form.Field>
-				<Button primary> Sign In! </Button>
 			</Form>
 		);
 	}
 }
 
-SignInForm.propTypes={
+SignUpForm.propTypes={
 	submit: PropTypes.func.isRequired
 };
-export default SignInForm;
+export default SignUpForm;

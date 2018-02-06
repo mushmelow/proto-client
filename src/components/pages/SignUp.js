@@ -1,10 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import {connect} from 'react-redux';
-import SignInForm from '../forms/SignInForm';
+import SignUpForm from '../forms/SignUpForm';
 import {login} from '../../actions/auth';
 
-class SignIn extends React.Component{
+class SignUp extends React.Component{
 submit = (data) => 
 	this.props.login(data).then(()=> 
 		this.props.history.push("/"));
@@ -16,9 +16,9 @@ submit = (data) =>
 				<div className="col-6">
 					<br/>
 					<br/>
-					<h2>Login Form</h2>
+					<h2>Signup Form</h2>
 					<br/>
-					<SignInForm submit={this.submit}/>
+					<SignUpForm submit={this.submit}/>
 				</div>
 				<div className="col"></div>
 			</div>
@@ -27,11 +27,11 @@ submit = (data) =>
 }
 
 
-SignIn.propTypes={
+SignUp.propTypes={
 	history: PropTypes.shape({
 		push: PropTypes.func.isRequired
 	}).isRequired,
 	login: PropTypes.func.isRequired
 };
 
-export default connect(null, {login})(SignIn);
+export default connect(null, {login})(SignUp);
