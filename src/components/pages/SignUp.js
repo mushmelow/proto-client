@@ -26,7 +26,6 @@ submit = (data) =>
 	}
 }
 
-
 SignUp.propTypes={
 	history: PropTypes.shape({
 		push: PropTypes.func.isRequired

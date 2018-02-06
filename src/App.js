@@ -1,6 +1,6 @@
 import React from 'react';
-import NavigationBar from './NavigationBar';
-import SphinxHeader from './SphinxHeader';
+import NavigationBar from './components/layout/NavigationBar';
+import SphinxHeader from './components/layout/SphinxHeader';
 
 class App extends React.Component {
 	render () {
