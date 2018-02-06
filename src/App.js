@@ -1,13 +1,19 @@
 import React from 'react';
-import {Route} from 'react-router-dom';
-import HomePage from "./components/pages/HomePage";
-import SignIn from "./components/pages/SignIn";
+import NavigationBar from './NavigationBar';
+import SphinxHeader from './SphinxHeader';
 
-const App =() =>(
-<div className="ui container">
-  <Route path="/" exact component= {HomePage} />
-  <Route path="/signin" exact component= {SignIn}/>
-</div>
-);
+class App extends React.Component {
+	render () {
+		return (
+			<div>
+				<SphinxHeader/>
+				<NavigationBar />
+				<div className="container">
+					{this.props.children}
+				</div>
+			</div>
+		)
+	}
+}
 
 export default App;

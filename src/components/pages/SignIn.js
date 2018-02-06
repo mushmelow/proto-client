@@ -11,13 +11,17 @@ submit = (data) =>
 
 	render(){
 		return(
-			<div>
-				<h1> Sign In</h1>
-
-				<SignInForm submit={this.submit}/>
-
+			<div className="row">
+				<div className="col"></div>
+				<div className="col-6">
+					<br/>
+					<br/>
+					<h2>Login Form</h2>
+					<br/>
+					<SignInForm submit={this.submit}/>
+				</div>
+				<div className="col"></div>
 			</div>
-
 		);
 	}
 }
