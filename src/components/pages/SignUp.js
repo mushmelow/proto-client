@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import {connect} from 'react-redux';
 import SignUpForm from '../forms/SignUpForm';
-import {login} from '../../actions/auth';
+import {signup} from '../../actions/auth';
 
 class SignUp extends React.Component{
 submit = (data) => 
@@ -33,4 +33,4 @@ SignUp.propTypes={
 	login: PropTypes.func.isRequired
 };
 
-export default connect(null, {login})(SignUp);
+export default connect(null, {signup})(SignUp);

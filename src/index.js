@@ -11,6 +11,7 @@ import "semantic-ui-css/semantic.min.css";
 import App from './App';
 import HomePage from "./components/pages/HomePage";
 import SignUp from "./components/pages/SignUp";
+import Login from "./components/pages/Login";
 
 import rootReducer from "./rootReducer";
 import registerServiceWorker from './registerServiceWorker';
@@ -33,6 +34,7 @@ render(
 	      <Switch>
 				  <Route path="/" exact component= {HomePage} />
 				  <Route path="/signup" exact component= {SignUp}/>
+				  <Route path="/login" exact component= {Login}/>
 	      </Switch>
 	    </App>
 	  </Router>
