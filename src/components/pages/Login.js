@@ -6,7 +6,7 @@ import {login} from '../../actions/auth';
 
 class Login extends React.Component{
 submit = (data) => 
-	this.props.loginSignin(data).then(()=> 
+	this.props.login(data).then(()=> 
 		this.props.history.push("/"));
 
 	render(){

@@ -8,10 +8,9 @@ export default {
 		login: (credentials) => 
 			axios.post('users/signin', credentials)
 			.then(res => {
-				const token = res.data.token;
-				localStorage.setItem('jwtTokenA', token);
-				res.data.user;
-			}
-		)	
+				localStorage.setItem('bookwormJWT',res.data.user.token)
+				localStorage.setItem('email',res.data.user.email)
+				return res.data.user;
+			})	
 	}
 }

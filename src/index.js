@@ -5,6 +5,9 @@ import { Provider} from 'react-redux';
 import thunk from 'redux-thunk';
 import {createStore, applyMiddleware} from 'redux';
 import {composeWithDevTools} from 'redux-devtools-extension';
+import setAuthorizationHeader from './actions/setAuthorizationHeader';
+import { userLoggedIn } from "./actions/auth";
+import jwt from 'jsonwebtoken';
 
 import "semantic-ui-css/semantic.min.css";
 
@@ -26,6 +29,20 @@ const store = createStore(
 // 	(state = {}) => state,
 // 	applyMiddleware(thunk)
 // );
+if (localStorage.bookwormJWT) {
+  const payload = jwt.decode(localStorage.bookwormJWT);
+  console.log(payload);
+  const user = {
+    token: localStorage.bookwormJWT,
+    email: localStorage.email
+    // email: payload.email,
+    // confirmed: payload.confirmed
+  };
+  setAuthorizationHeader(localStorage.bookwormJWT);
+  store.dispatch(userLoggedIn(user));
+}
+
+// setAuthorizationHeader(localStorage.jwtToken);
 
 render(
   <Provider store={store}>
