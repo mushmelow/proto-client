@@ -7,7 +7,7 @@ class App extends React.Component {
 		return (
 			<div>
 				<SphinxHeader/>
-				<NavigationBar />
+				<NavigationBar/>
 				<div className="container">
 					{this.props.children}
 				</div>

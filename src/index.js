@@ -25,10 +25,6 @@ const store = createStore(
 	composeWithDevTools(applyMiddleware(thunk))
 );
 
-// const store = createStore(
-// 	(state = {}) => state,
-// 	applyMiddleware(thunk)
-// );
 if (localStorage.bookwormJWT) {
   const payload = jwt.decode(localStorage.bookwormJWT);
   console.log(payload);
@@ -41,8 +37,6 @@ if (localStorage.bookwormJWT) {
   setAuthorizationHeader(localStorage.bookwormJWT);
   store.dispatch(userLoggedIn(user));
 }
-
-// setAuthorizationHeader(localStorage.jwtToken);
 
 render(
   <Provider store={store}>

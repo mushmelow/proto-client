@@ -1,10 +1,15 @@
 import {USER_LOGGED_IN} from '../types';
+import {USER_LOGGED_OUT} from '../types';
 import api from './api';
 import setAuthorizationHeader from "./setAuthorizationHeader";
 
 export const userLoggedIn= (user) => ({
 	type: USER_LOGGED_IN,
 	user
+})
+
+export const userLoggedOut= (user) => ({
+	type: USER_LOGGED_OUT
 })
 
 export const signup = (credentials) => (dispatch) => 
@@ -22,3 +27,9 @@ export const login = (credentials) => (dispatch) =>
     setAuthorizationHeader(user.token);
     dispatch(userLoggedIn(user));
   });
+
+export const logout = () => (dispatch) => {
+    localStorage.removeItem('bookwormJWT');
+    console.log('LOGOUT BUTTON CLICKED')
+		dispatch(userLoggedOut());
+};
