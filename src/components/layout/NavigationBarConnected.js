@@ -12,7 +12,7 @@ class NavigationBarConnected extends Component {
 					  <div class="collapse navbar-collapse" id="navbarSupportedContent">
 					    <ul class="navbar-nav mr-auto">
 					      <li class="nav-item active">
-					        <a class="nav-link" href="#">System Status<span class="sr-only">(current)</span></a>
+					        <Link class="nav-link" to="/">System Status<span class="sr-only">(current)</span></Link>
 					      </li>
 					      <li class="nav-item dropdown">
 					        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
