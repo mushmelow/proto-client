@@ -8,6 +8,7 @@ import {composeWithDevTools} from 'redux-devtools-extension';
 import setAuthorizationHeader from './actions/setAuthorizationHeader';
 import { userLoggedIn } from "./actions/auth";
 import jwt from 'jsonwebtoken';
+import UserRoute from './components/routes/UserRoute';
 
 import "semantic-ui-css/semantic.min.css";
 
@@ -43,7 +44,7 @@ render(
 	  <Router>
 	    <App>
 	      <Switch>
-				  <Route path="/" exact component= {HomePage} />
+				  <UserRoute path="/" exact component= {HomePage} />
 				  <Route path="/signup" exact component= {SignUp}/>
 				  <Route path="/login" exact component= {Login}/>
 	      </Switch>
