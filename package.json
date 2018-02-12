@@ -20,7 +20,7 @@
     "semantic-ui-react": "^0.77.2",
     "validator": "^9.4.0"
   },
-  "proxy": "http://localhost:3001",
+  "proxy": "http://localhost:3000",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",

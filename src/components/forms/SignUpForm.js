@@ -70,7 +70,7 @@ class SignUpForm extends React.Component {
 			    	placeholder="Password"
 			    />
 			  </div>
-			  <button type="submit" className="btn btn-primary">Login</button>
+			  <button type="submit" className="btn btn-primary">Sign Up</button>
 
 			</Form>
 		);

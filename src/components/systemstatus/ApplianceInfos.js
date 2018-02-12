@@ -14,7 +14,7 @@ class ApplianceInfos extends React.Component{
   }
 
   componentDidMount() {
-    axios.get('/system-status')
+    axios.get('/appliance_infos')
     .then(response => {
       this.setState({
         name: response.data[0].name, 

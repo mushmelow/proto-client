@@ -6,7 +6,7 @@ import {signup} from '../../actions/auth';
 
 class SignUp extends React.Component{
 submit = (data) => 
-	this.props.login(data).then(()=> 
+	this.props.signup(data).then(()=> 
 		this.props.history.push("/"));
 
 	render(){
@@ -30,7 +30,7 @@ SignUp.propTypes={
 	history: PropTypes.shape({
 		push: PropTypes.func.isRequired
 	}).isRequired,
-	login: PropTypes.func.isRequired
+	signup: PropTypes.func.isRequired
 };
 
 export default connect(null, {signup})(SignUp);
