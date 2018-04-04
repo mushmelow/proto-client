@@ -6,9 +6,9 @@ import NavigationBarDisconnected from './NavigationBarDisconnected';
 import {logout} from '../../actions/auth'
 const NavigationBar = ({isAuthenticated, logout}) =>(
 
-		<nav className="navbar navbar-expand-lg navbar-light bg-light">
+		<div>
 			{isAuthenticated ? <NavigationBarConnected logout={logout}/> : <NavigationBarDisconnected/>}
-		</nav>
+		</div>
 );
 
 

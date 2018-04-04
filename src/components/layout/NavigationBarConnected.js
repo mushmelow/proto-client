@@ -5,7 +5,7 @@ class NavigationBarConnected extends Component {
 
     render() {
         return (
-       		<div>
+       		<nav className="navbar navbar-expand-lg navbar-light bg-light">
 					  <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 					    <span className="navbar-toggler-icon"></span>
 					  </button>
@@ -74,7 +74,7 @@ class NavigationBarConnected extends Component {
 					        <a className="nav-link" href="#">About</a>
 					      </li>
 					    </ul>
-					    <ul className="nav navbar-nav navbar-right">
+					    <ul className="navbar-nav navbar-right">
 					      <li className="nav-item inactive">
 					        <a className="nav-link" href="#">admin@vts42</a>
 					      </li>
@@ -85,7 +85,7 @@ class NavigationBarConnected extends Component {
 					      </li>
 					    </ul>
 					  </div>
-					</div>   
+					</nav>
         );
     }
 }

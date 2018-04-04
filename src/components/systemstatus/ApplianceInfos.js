@@ -9,7 +9,9 @@ class ApplianceInfos extends React.Component{
     this.state = {
       name: '',
       productVersion: '',
-      serialNumber:''
+      serialNumber:'',
+      date:'',
+      uptime:''
     }
   }
 
@@ -25,6 +27,16 @@ class ApplianceInfos extends React.Component{
     .catch(error => {
       console.log('Error fetching and parsing data', error);
     });
+    axios.get('/appliance_infos/exec-date-and-uptime')
+    .then(response => {
+      this.setState({
+        date: response.data.result.date, 
+        uptime: response.data.result.uptime
+      });
+    })
+    .catch(error => {
+      console.log('Error fetching and parsing data from system-status.sh', error);
+    });
   };
   
 	render(){
@@ -36,8 +48,8 @@ class ApplianceInfos extends React.Component{
             <li><b>Name: </b>{this.state.name}</li>
             <li><b>Product Version: </b>{this.state.productVersion}</li>
             <li><b>Serial Number: </b>{this.state.serialNumber}</li>
-            <li><b>System Time:</b></li>
-            <li><b>Uptime:</b></li>
+            <li><b>System Time: </b>{this.state.date}</li>
+            <li><b>Uptime: </b> {this.state.uptime}</li>
           </ul>
         </div>
       </div>
