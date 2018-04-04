@@ -20,9 +20,10 @@
     "semantic-ui-react": "^0.77.2",
     "validator": "^9.4.0"
   },
-  "proxy": "http://localhost:3000",
+  "proxy": "http://192.168.20.139:8080",
   "scripts": {
-    "start": "react-scripts start",
+    "start": "HOST=192.168.20.139 PORT=8081 react-scripts start",
+    "start-dev": "HOST=localhost PORT=3000 react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
